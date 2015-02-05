@@ -13,6 +13,13 @@
 
             }
    
+        var toggleAll = $('#toggle-all');
+    toggleAll.on('click', function(){
+        $('.toggle').attr('checked', true);
+        $('li').toggleClass('completed');
+
+    });
+
         });
     });
 
@@ -27,12 +34,7 @@
 //        $(this).remove();
 //}
 //});
-//var toggleAll = $('#toggle-all');
-//    toggleAll.on('click', function(){
-//        $('.toggle').attr('checked', true);
-//        $('li').toggleClass('completed');
-//
-//    });
+
 
 })(window);
 
