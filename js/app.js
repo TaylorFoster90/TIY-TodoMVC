@@ -14,29 +14,24 @@
                 $('#todo-count strong').text(lengthOfToDo);
 
             }
-   
+        $('.destroy').on('click', function() {
+        $(this).parent().parent().remove();
+        var lengthOfToDo = $('#todo-list li').length;
+                $('#todo-count strong').text(lengthOfToDo);
 
+        });   
 
-
-
-
-
-
+            });
 //        var toggleAll = $('#toggle-all');
 //    toggleAll.on('click', function(){
 //        $('.toggle').attr('checked', true);
 //        $('li').toggleClass('completed');
-//
-//    });
+
 
         });
-    });
 
-//function delete_task() {
-//  $('button.destroy').on ('click',function(){
-//    var current_element = $(this);
-//    var id = $(this).attr('id');
-//  });
+
+
 
 //function remover(){
 //$("button.destroy").on('click',function(){
