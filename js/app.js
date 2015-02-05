@@ -2,6 +2,7 @@
 	'use strict';
 
 	// Your starting point. Enjoy the ride!
+
 	
 
 	var toggleAll = $('#toggle-all');
@@ -10,6 +11,18 @@
 		$('li').toggleClass('completed');
 	});
 
+	// var lists = $('li')
+
+	// $('#clear-completed').on('click', function(){
+	// 	$('#todo-list').remove(lists);
+	// })
+
+	$('#new-todo').keypress(function (e){
+		if(e.keyCode==13){
+		 
+		}
+		$(this).val().remove();
+	});
 
 
 	// 	$(document).ready(function(){
