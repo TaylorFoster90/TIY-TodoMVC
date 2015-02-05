@@ -8,7 +8,7 @@
                 var newTask = $('#new-todo').val();
                 console.log(newTask);
                 var newItem = '<li><div class="view"><input class="toggle" type="checkbox"><label>' + newTask + '</label><button class="destroy"></button></div><input class="edit" value="'+ newTask +'"></li>';
-                        $('#todo-list').append(newItem);
+                        $('#todo-list').prepend(newItem);
                     $('#new-todo').val('');
                 var lengthOfToDo = $('#todo-list li').length;
                 $('#todo-count strong').text(lengthOfToDo);
@@ -30,14 +30,6 @@
 
         });
 
-
-
-
-//function remover(){
-//$("button.destroy").on('click',function(){
-//        $(this).remove();
-//}
-//});
 
 
 })(window);
