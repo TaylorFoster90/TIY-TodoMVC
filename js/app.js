@@ -10,15 +10,24 @@
                 var newItem = '<li><div class="view"><input class="toggle" type="checkbox"><label>' + newTask + '</label><button class="destroy"></button></div><input class="edit" value="'+ newTask +'"></li>';
                         $('#todo-list').append(newItem);
                     $('#new-todo').val('');
+                var lengthOfToDo = $('#todo-list li').length;
+                $('#todo-count strong').text(lengthOfToDo);
 
             }
    
-        var toggleAll = $('#toggle-all');
-    toggleAll.on('click', function(){
-        $('.toggle').attr('checked', true);
-        $('li').toggleClass('completed');
 
-    });
+
+
+
+
+
+
+//        var toggleAll = $('#toggle-all');
+//    toggleAll.on('click', function(){
+//        $('.toggle').attr('checked', true);
+//        $('li').toggleClass('completed');
+//
+//    });
 
         });
     });
