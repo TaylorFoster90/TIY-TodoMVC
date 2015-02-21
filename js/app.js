@@ -16,13 +16,14 @@ var tasks = [
  new Vue ({
         el:'#todo-list',
         data: {
-           tasks: tasks,    
-        }
+//      
+           tasks: tasks    
+        },
             
      
-        methods:{ 
-             edit: function(task) {
-              task.editing = true; 
+        methods: { 
+             edit: function(content) {
+              content.editing = true; 
             
           },
         }
