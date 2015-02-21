@@ -1,39 +1,35 @@
-(function (window) {
+(function(window) {
     'use strict';
 
-var tasks =[{
-	content: "Taste Javascript",
-	finished: true
-},
-{
-	content: 'Buy a unicorn',
-	finished: false
-},
-{
-  content: 'Hello World',
-  finished: false
-}]
+    var tasks = [{
+        content: "Taste Javascript",
+        finished: true
+    }, {
+        content: 'Buy a unicorn',
+        finished: false
+    }, {
+        content: 'Hello World',
+        finished: false
+    }]
 
-// Your starting point. Enjoy the ride!
-  new Vue({
-    el: '#todoapp',
-    data: {
-      tasks: tasks,
-    },
-    methods: {
-    	remove: function(task){
-        this.tasks.splice(this.tasks.indexOf(task), 1);
-    	},
-      clear: function(){
-        this.tasks = _.filter(tasks, 'finished', false);
+    // Your starting point. Enjoy the ride!
+    new Vue({
+        el: '#todoapp',
+        data: {
+            tasks: tasks,
         },
-      markAll: function(){
-        tasks.finished = false;
-        console.log('test')
-        return _.forEach(tasks, function(task){
-          task.finished = true;
-        });
-      }
-      }
-  });
+        methods: {
+            remove: function(task) {
+                this.tasks.splice(this.tasks.indexOf(task), 1);
+            },
+            clear: function() {
+                this.tasks = _.filter(tasks, 'finished', false);
+            },
+            markAll: function() {
+                _.forEach(tasks, function(task) {
+                    task.finished = true;
+                })
+            }
+        }
+    });
 })(window);
