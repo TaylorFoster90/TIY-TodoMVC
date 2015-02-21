@@ -35,7 +35,7 @@
 			<footer id="footer">
 				<!-- This should be `0 items left` by default -->
 				<span id="todo-count">
-					<strong v-text="itemsLeft"></strong> {{itemsLeft | pluralize item}} left</span>
+					<strong v-text="itemsLeft"></strong> {{remaining | pluralize item}} left</span>
 				<!-- Remove this if you don't implement routing -->
 				<ul id="filters">
 					<li>
@@ -49,13 +49,12 @@
 					</li>
 				</ul>
 				<!-- Hidden if no completed items are left ↓ -->
-				<button id="clear-completed"></button>
+				<button id="clear-completed" v-on="click:clearDone" v-show="tasks.length > itemsLeft">Clear completed ({{tasks.length - itemsLeft}})</button>
 			</footer>
 		</section>
 		<footer id="info">
 			<p>Double-click to edit a todo</p>
-			<!-- Remove the below line ↓ -->
-			<p>Template by <a href="http://sindresorhus.com">Sindre Sorhus</a></p>
+			
 			<!-- Change this out with your name and url ↓ -->
 			<p>Created by <a href="http://todomvc.com">you</a></p>
 			<p>Part of <a href="http://todomvc.com">TodoMVC</a></p>

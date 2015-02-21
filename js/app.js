@@ -51,7 +51,13 @@ var tasks =[{
         }
         this.tasks.push({ content: value, finished: false })
         this.newTask = '';
-      }
+      },
+      clearDone: function () {
+                this.tasks = this.tasks.filter(this.filters.active);
+            }
+      
+
+
     },
     
     filters: {
@@ -66,6 +72,7 @@ var tasks =[{
       itemsLeft: function () {
       return this.tasks.filter(this.filters.active).length;
       }
+      
     }    
   
   });
