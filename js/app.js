@@ -1,34 +1,35 @@
-(function (window) {
-	'use strict';
+(function(window) {
+    'use strict';
 
-	// Your starting point. Enjoy the ride!
+    var tasks = [{
+        content: "Taste Javascript",
+        finished: true
+    }, {
+        content: 'Buy a unicorn',
+        finished: false
+    }, {
+        content: 'Hello World',
+        finished: false
+    }]
 
-	
-
-	var toggleAll = $('#toggle-all');
-	toggleAll.on('click', function(){
-		$('.toggle').attr('checked', true);
-		$('li').toggleClass('completed');
-	});
-
-	// var lists = $('li')
-
-	// $('#clear-completed').on('click', function(){
-	// 	$('#todo-list').remove(lists);
-	// })
-
-	$('#new-todo').keypress(function (e){
-		if(e.keyCode==13){
-		 
-		}
-		$(this).val().remove();
-	});
-
-
-	// 	$(document).ready(function(){
-	// 	$('.toggle').on('click', function(){
-	// 		$(this).attr('checked');
-	// 	})
-	// }); 
-
+    // Your starting point. Enjoy the ride!
+    new Vue({
+        el: '#todoapp',
+        data: {
+            tasks: tasks,
+        },
+        methods: {
+            remove: function(task) {
+                this.tasks.splice(this.tasks.indexOf(task), 1);
+            },
+            clear: function() {
+                this.tasks = _.filter(tasks, 'finished', false);
+            },
+            markAll: function() {
+                _.forEach(tasks, function(task) {
+                    task.finished = true;
+                })
+            }
+        }
+    });
 })(window);
