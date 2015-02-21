@@ -21,6 +21,18 @@ var tasks =[{
     el: '#todoapp',
     data: {
       tasks: tasks,
+      activeFilter: 'all',
+      filters: {
+        all: function () {
+          return true;
+        },
+        active: function (tasks) {
+          return !tasks.completed;
+        },
+        completed: function (tasks) {
+          return tasks.completed;
+        }    
+     }   
     },
     methods: {
     	remove: function(task){
@@ -32,6 +44,15 @@ var tasks =[{
         this.tasks.push({ content: value, finished: false })
         this.newTask = '';
       }
-    }
+    },
+
+    filters: {
+      filterTasks: function (tasks) {
+
+        return tasks.filter(this.filters[this.activeFilter]);
+            }
+        }
+  
   });
+
 })(window);
