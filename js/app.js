@@ -41,6 +41,9 @@ var tasks =[{
     
       addTask: function(tasks){
         var value  = this.newTask;
+        if (!value) {
+          return;
+        }
         this.tasks.push({ content: value, finished: false })
         this.newTask = '';
       }
