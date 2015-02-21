@@ -27,10 +27,10 @@ var tasks =[{
           return true;
         },
         active: function (tasks) {
-          return !tasks.completed;
+          return !tasks.finished;
         },
         completed: function (tasks) {
-          return tasks.completed;
+          return tasks.finished;
         }    
      }   
     },
