@@ -2,20 +2,27 @@
 	'use strict';
 
 
-
+var tasks = [ 
+    {content: "Taste Javascript",
+     finished:false,
+     editing: false}, 
+    {content:"Buy a Unicorn", 
+     finished:false, 
+     editing:false}
+]
+    
     
     
  new Vue ({
         el:'#todo-list',
         data: {
-            contents: [
-                {name: "Taste Javascript", checked:false, editing: false}, 
-                {name:"Buy a Unicorn", checked:false, editing:false}],
-        },
+           tasks: tasks,    
+        }
+            
      
         methods:{ 
-             edit: function(content) {
-              content.editing = true; 
+             edit: function(task) {
+              task.editing = true; 
             
           },
         }
