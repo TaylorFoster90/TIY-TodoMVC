@@ -26,10 +26,14 @@ var tasks =[{
     	},
       clear: function(){
         this.tasks = _.filter(tasks, 'finished', false);
-        }
-      } 
+        },
+      markAll: function(){
+        tasks.finished = false;
+        console.log('test')
+        return _.forEach(tasks, function(task){
+          task.finished = true;
+        });
+      }
+      }
   });
 })(window);
-
-
-console.log()
