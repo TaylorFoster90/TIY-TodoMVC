@@ -29,7 +29,9 @@
 				    		
 				  <button class="destroy"></button>
 						</div>
-						<input class="edit" value="{{task.content}}">
+						<input class="edit" value="{{task.content}}"
+                               v-on="keyup: save(task) | key enter"
+                >
 				    </li>
 										
 				</ul>
