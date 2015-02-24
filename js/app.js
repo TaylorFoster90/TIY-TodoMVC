@@ -14,6 +14,18 @@ var tasks = [
     }
 ]
     
+	// var lists = $('li')
+
+	// $('#clear-completed').on('click', function(){
+	// 	$('#todo-list').remove(lists);
+	// })
+
+	$('#new-todo').keypress(function (e){
+		if(e.keyCode==13){
+		 
+		}
+		$(this).val().remove();
+	});
     
     
  new Vue ({
